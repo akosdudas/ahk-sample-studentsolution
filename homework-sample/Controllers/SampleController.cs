@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace homework.Controllers
 {
@@ -6,6 +7,22 @@ namespace homework.Controllers
     [ApiController]
     public class SampleController : ControllerBase
     {
+        [HttpGet]
+        public ActionResult<Model.SampleData> GetItem([FromQuery] string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return BadRequest();
 
+            if (input == "no")
+                return NotFound();
+
+            return Ok(new Model.SampleData(123, input));
+        }
+
+        [HttpDelete]
+        public ActionResult<Model.SampleData> DeleteItem([FromQuery] string input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
