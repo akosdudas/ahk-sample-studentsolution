@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace homework.Controllers
 {
@@ -22,7 +21,7 @@ namespace homework.Controllers
         [HttpDelete]
         public ActionResult<Model.SampleData> DeleteItem([FromQuery] string input)
         {
-            throw new NotImplementedException();
+            return Ok();
         }
     }
 }
