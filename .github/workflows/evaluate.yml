@@ -26,7 +26,7 @@ jobs:
         run: dotnet build
 
       - name: Evaluate
-        uses: docker://akosdudas/ahk-sample:evaluator-v1
+        uses: docker://ghcr.io/akosdudas/ahk-sample:evaluator-v1
 
       - name: Publish results
         uses: akosdudas/ahk-action-publish-result-pr@master
